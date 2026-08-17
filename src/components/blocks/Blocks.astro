@@ -1,6 +1,5 @@
 ---
 import { tinaField } from '@tinacms/astro/tina-field';
-import Callout from './Callout.astro';
 import Content from './Content.astro';
 import Cta from './Cta.astro';
 import Features from './Features.astro';
@@ -9,7 +8,7 @@ import Split from './Split.astro';
 import Stats from './Stats.astro';
 import Testimonial from './Testimonial.astro';
 import Video from './Video.astro';
-import ConstellationDivider from '../space/ConstellationDivider.astro';
+import Divider from '../space/Divider.astro';
 import type { CmsPage } from '../../lib/data';
 
 interface Props {
@@ -21,8 +20,7 @@ const blocks = (data?.blocks ?? []).filter(b => b !== null);
 ---
 {blocks.map((block, i) => {
 	const rendered = (() => {
-		switch (block.__typename) {
-			case 'PageBlocksCallout': return <Callout data={block} />;
+switch (block.__typename) {
 			case 'PageBlocksContent': return <Content data={block} />;
 			case 'PageBlocksCta': return <Cta data={block} />;
 			case 'PageBlocksFeatures': return <Features data={block} />;
@@ -36,7 +34,7 @@ const blocks = (data?.blocks ?? []).filter(b => b !== null);
 	return (
 		<>
 			<div data-tina-field={tinaField(block)}>{rendered}</div>
-			{i < blocks.length - 1 && <ConstellationDivider class="my-2 opacity-70" />}
+			{i < blocks.length - 1 && <Divider class="my-2" />}
 		</>
 	);
 })}

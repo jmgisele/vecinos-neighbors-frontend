@@ -68,3 +68,6 @@ deno.lock
 .netlify
 .wrangler
 dist
+
+# james
+example-images

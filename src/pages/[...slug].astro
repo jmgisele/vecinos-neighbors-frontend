@@ -25,6 +25,6 @@ const config = (await getConfig()).data?.config ?? null;
 	description={config?.seo?.description ?? 'Welcome to my website!'}
 >
 	<TinaIsland name="page" wrapper={islands.page.wrapper} params={{ slug }} primary>
-		<PageBody data={data} />
+		<PageBody data={data}  />
 	</TinaIsland>
 </Base>

@@ -35,64 +35,75 @@
 	--color-muted: var(--muted);
 	--color-muted-foreground: var(--muted-foreground);
 	--color-accent: var(--accent);
+	--color-accent-hover: var(--accent-hover);
 	--color-accent-foreground: var(--accent-foreground);
 	--color-destructive: var(--destructive);
 	--color-border: var(--border);
-	--color-input: var(--input);
-	--color-ring: var(--ring);
-	--color-chart-1: var(--chart-1);
-	--color-chart-2: var(--chart-2);
-	--color-chart-3: var(--chart-3);
-	--color-chart-4: var(--chart-4);
-	--color-chart-5: var(--chart-5);
+
+	--color-tomato: var(--tomato);
+	--color-sunflower: var(--sunflower);
+	--color-golden: var(--golden);
+	--color-sienna: var(--sienna);
+	--color-pumpkin: var(--pumpkin);
+	--color-tea-green: var(--tea-green);
+	--color-sage: var(--sage);
+	--color-teal: var(--teal);
+	--color-muted-teal: var(--muted-teal);
+	--color-dark-teal: var(--dark-teal);
+
+
+	--color-muted-white: var(--muted-white);
+
 }
 
 :root {
 	--radius: 0.625rem;
-	--background: oklch(0.99 0.004 285);
-	--foreground: oklch(0.20 0.03 285);
-	--card: oklch(1 0.002 285);
-	--card-foreground: oklch(0.20 0.03 285);
-	--popover: oklch(1 0.002 285);
-	--popover-foreground: oklch(0.20 0.03 285);
-	--primary: oklch(0.57 0.198 37);
-	--primary-foreground: oklch(0.99 0.005 285);
-	--secondary: oklch(0.96 0.01 285);
-	--secondary-foreground: oklch(0.30 0.04 285);
-	--muted: oklch(0.96 0.01 285);
-	--muted-foreground: oklch(0.48 0.03 285);
-	--accent: oklch(0.95 0.02 285);
-	--accent-foreground: oklch(0.30 0.05 285);
-	--destructive: oklch(0.577 0.245 27.325);
-	--border: oklch(0.90 0.012 285);
-	--input: oklch(0.90 0.012 285);
-	--ring: oklch(0.57 0.198 37);
-	--chart-1: oklch(0.646 0.222 41.116);
-	--chart-2: oklch(0.6 0.118 184.704);
-	--chart-3: oklch(0.398 0.07 227.392);
-	--chart-4: oklch(0.828 0.189 84.429);
-	--chart-5: oklch(0.769 0.188 70.08);
-}
 
-.dark {
-	--background: oklch(0.16 0.02 285);
-	--foreground: oklch(0.95 0.012 285);
-	--card: oklch(0.21 0.025 285);
-	--card-foreground: oklch(0.95 0.012 285);
-	--popover: oklch(0.21 0.025 285);
-	--popover-foreground: oklch(0.95 0.012 285);
-	--primary: oklch(0.70 0.18 40);
-	--primary-foreground: oklch(0.16 0.02 285);
-	--secondary: oklch(0.26 0.03 285);
-	--secondary-foreground: oklch(0.95 0.012 285);
-	--muted: oklch(0.26 0.03 285);
-	--muted-foreground: oklch(0.72 0.03 285);
-	--accent: oklch(0.28 0.04 285);
-	--accent-foreground: oklch(0.95 0.012 285);
-	--destructive: oklch(0.70 0.19 22);
-	--border: oklch(0.95 0.01 285 / 12%);
-	--input: oklch(0.95 0.01 285 / 15%);
-	--ring: oklch(0.70 0.18 40);
+	--logo-purple:  #5f186a;
+	--logo-green: #00a850;
+	--logo-red: #db1f35;
+	--logo-orange: #ef6122;
+
+	--tomato: #BB362E;
+	--sunflower: #D89D2B;
+	--golden: #B48322;
+	--sienna: #944F14;
+	--pumpkin: #C87A31;
+	--tea-green: #E6FDC4;
+	--sage: #8AB68D;
+	--teal: #35715B;
+	--muted-teal: #346150;
+	--dark-teal: #205542;
+
+
+	--charcoal: #52525b; /* tailwind zinc 600 */
+  --carbon: #18181b; /* zinc 900 */
+	--basically-white: #fafafa; /* 100 */
+	--barely-white: #f4f4f5; /* 200 */
+	--muted-white: #e4e4e7; /* 300 */
+
+
+
+	--background: var(--tomato);
+	--foreground: var(--basically-white);
+	--card: color-mix(in hsl, var(--background), white 15%);
+	--card-foreground: var(--basically-white);
+	--border:  color-mix(in hsl, var(--background), white 40%);
+
+
+	--popover-foreground: var(--muted-white);
+	--primary: color-mix(in hsl, var(--logo-purple), white 10%);
+	--primary-foreground: var(--barely-white);
+	--secondary: var(--sunflower);
+	--secondary-foreground: var(--barely-white);
+	--muted: var(--yellow-teal);
+	--muted-foreground: var(--muted-white);
+
+	--accent: color-mix(in hsl, var(--logo-green), black 10%);
+	--accent-hover: color-mix(in hsl, var(--logo-green), black 15%);
+	--accent-foreground: var(--muted-white);
+
+
 }
 
 @layer base {
@@ -132,12 +143,4 @@
 	--tw-prose-pre-bg: var(--muted);
 	--tw-prose-th-borders: var(--border);
 	--tw-prose-td-borders: var(--border);
-}
-
-@keyframes twinkle {
-	0%, 100% { opacity: 0.25; }
-	50% { opacity: 0.9; }
-}
-@media (prefers-reduced-motion: no-preference) {
-	.star-twinkle { animation: twinkle var(--twinkle-dur, 4s) ease-in-out infinite; animation-delay: var(--d, 0s); }
 }

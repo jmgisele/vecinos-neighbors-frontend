@@ -17,7 +17,7 @@ export const ctaBlockSchema: Template = {
 				{ type: 'string', label: 'Label', name: 'label' },
 				{ type: 'string', label: 'Type', name: 'type', options: [
 					{ label: 'Button', value: 'button' }, { label: 'Link', value: 'link' } ] },
-				{ type: 'string', label: 'Icon (Tabler name)', name: 'icon' },
+				{ type: 'string', label: 'Icon', name: 'icon', description: "Any Tabler icon name, e.g. brand-x, book-2, brand-github. Browse at https://icones.js.org/collection/tabler", },
 				{ type: 'string', label: 'Link', name: 'link' },
 			],
 		},

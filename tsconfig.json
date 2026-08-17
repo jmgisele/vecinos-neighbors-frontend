@@ -3,6 +3,16 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist", "public", "tina/__generated__", "tina/collections", "tina/config.ts"],
   "compilerOptions": {
-    "strictNullChecks": true
+    "strictNullChecks": true,
+		"paths": {
+      "@/components/*": ["./src/components/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/content/*": ["./src/content/*"],
+			"@/layouts/*": ["./src/layouts/*"],
+			"@/lib/*": ["./src/lib/*"],
+			"@/pages/*": ["./src/pages/*"],
+			"@/styles/*": ["./src/syles/*"],
+      "@/*": ["./src/*"]
+    }
   }
 }

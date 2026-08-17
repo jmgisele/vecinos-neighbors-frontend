@@ -4,9 +4,7 @@ import { featuresBlockSchema } from '../../src/components/blocks/features.templa
 import { statsBlockSchema } from '../../src/components/blocks/stats.template';
 import { ctaBlockSchema } from '../../src/components/blocks/cta.template';
 import { testimonialBlockSchema } from '../../src/components/blocks/testimonial.template';
-import { calloutBlockSchema } from '../../src/components/blocks/callout.template';
 import { contentBlockSchema } from '../../src/components/blocks/content.template';
-import { videoBlockSchema } from '../../src/components/blocks/video.template';
 import { splitBlockSchema } from '../../src/components/blocks/split.template';
 
 export const PageCollection: Collection = {
@@ -16,7 +14,15 @@ export const PageCollection: Collection = {
 	format: 'mdx',
 	ui: {
 		router: ({ document }) => `/${document._sys.filename}`,
-	},
+    filename: {
+      readonly: true,
+      slugify: (values) => {
+        return `${values?.seoTitle
+          ?.toLowerCase()
+          .replace(/ /g, '-')}`
+      },
+    },
+  },
 	fields: [
 		{
 			name: 'seoTitle',
@@ -33,17 +39,15 @@ export const PageCollection: Collection = {
 			name: 'blocks',
 			label: 'Page Sections',
 			description:
-				"The visible content of the page. When the page starts with a Hero block, its Headline is the main on-page heading — edit that to change what visitors see at the top.",
+				"The visible content of the page.",
 			ui: { visualSelector: true },
 			templates: [
 				heroBlockSchema,
-				calloutBlockSchema,
 				featuresBlockSchema,
 				statsBlockSchema,
 				ctaBlockSchema,
 				contentBlockSchema,
 				testimonialBlockSchema,
-				videoBlockSchema,
 				splitBlockSchema,
 			],
 		},

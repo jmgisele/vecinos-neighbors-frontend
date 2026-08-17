@@ -11,7 +11,7 @@ export const featuresBlockSchema: Template = {
 			type: 'object', label: 'Feature Items', name: 'items', list: true,
 			ui: { itemProps: (i: FeatureItem) => ({ label: i?.title ?? '' }), defaultItem: { title: "Here's a feature", text: 'Describe it here.' } },
 			fields: [
-				{ type: 'string', label: 'Icon (Tabler name)', name: 'icon' },
+				{ type: 'string', label: 'Icon', name: 'icon', description: "Any Tabler icon name, e.g. brand-x, book-2, brand-github. Browse at https://icones.js.org/collection/tabler", },
 				{ type: 'string', label: 'Title', name: 'title' },
 				{ type: 'rich-text', label: 'Text', name: 'text' },
 			],

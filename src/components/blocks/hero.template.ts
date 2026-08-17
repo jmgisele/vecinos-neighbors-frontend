@@ -13,7 +13,7 @@ export const heroBlockSchema: Template = {
 			fields: [
 				{ type: 'string', label: 'Label', name: 'label' },
 				{ type: 'string', label: 'Type', name: 'type', options: [{ label: 'Button', value: 'button' }, { label: 'Link', value: 'link' }] },
-				{ type: 'string', label: 'Icon (Tabler name)', name: 'icon' },
+				{ type: 'string', label: 'Icon', name: 'icon', description: "Any Tabler icon name, e.g. brand-x, book-2, brand-github. Browse at https://icones.js.org/collection/tabler", },
 				{ type: 'string', label: 'Link', name: 'link' },
 			],
 		},
@@ -24,13 +24,11 @@ export const heroBlockSchema: Template = {
 				{ name: 'alt', label: 'Alt Text', type: 'string' },
 			],
 		},
-		{ type: 'boolean', label: 'Show starfield', name: 'starfield' },
 	],
 	ui: {
 		defaultItem: {
 			tagline: "Here's some text above the other text",
-			headline: 'Astro + TinaCMS, ready to ship',
-			starfield: true,
+			headline: 'Headline',
 		},
 	},
 };
