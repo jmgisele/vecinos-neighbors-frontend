@@ -54,6 +54,7 @@ function getSiteUrl() {
 // https://astro.build/config
 export default defineConfig({
 	site: getSiteUrl(),
+	base: '/vecinos-neighbors-frontend',
 	output: 'static',
 	adapter: await getAdapter(),
 	redirects: { '/home': '/' },

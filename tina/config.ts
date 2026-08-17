@@ -2,15 +2,20 @@ import { defineConfig } from "tinacms";
 import { BlogCollection } from "./collections/blog";
 import { GlobalConfigCollection } from "./collections/global-config";
 import { PageCollection } from "./collections/page";
+// import { UsernamePasswordAuthJSProvider } from 'tinacms-authjs/dist/tinacms'
+import { LocalAuthProvider } from 'tinacms'
+
+const isLocal = process.env.IS_LOCAL;
+
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
   process.env.GITHUB_BRANCH ||
-  process.env.VERCEL_GIT_COMMIT_REF ||
-  process.env.WORKERS_CI_BRANCH || // Cloudflare Workers Builds
-  process.env.CF_PAGES_BRANCH || // Cloudflare Pages
-  process.env.HEAD || // Netlify
-  "main";
+		process.env.VERCEL_GIT_COMMIT_REF ||
+		process.env.WORKERS_CI_BRANCH || // Cloudflare Workers Builds
+		process.env.CF_PAGES_BRANCH || // Cloudflare Pages
+		process.env.HEAD || // Netlify
+		"main";
 
 export default defineConfig({
   branch,
@@ -29,6 +34,9 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
+	// authProvider: isLocal
+  //   ? new LocalAuthProvider()
+  //   : new UsernamePasswordAuthJSProvider(),
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
